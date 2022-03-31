@@ -1,0 +1,70 @@
+<!-- Template page: offers three sections to visualize a 3 steps workflow.-->
+
+{% extends "masterPage.html" %}
+
+{% block content %}
+<div class="row">
+        <!-- Left Rail -->
+        <div class="col-xl-3 col-md-4">
+        </div>
+
+        <!-- Middle Rail -->
+        <div class="col-xl-6 col-md-4">
+            <div class="section">
+                <div class="panel panel--loose panel--raised base-margin-bottom" style="text-align:center">
+                    <h2 class="subtitle" style="text-align:center">Step 3: Download table with Product Information </h2>
+                    <form action="/download_csv" method="POST">
+                        <div class="flex-fluid">
+                            <input name="download_button" class="btn btn-primary" type="submit" value="Download CSV" onclick="$('#csv').show();">
+                        </div>
+                    </form>   
+                    <div class="responsive-table">
+                        <table class="table table--lined table--selectable table">
+                            <thead>
+                                <tr>
+                                    <th class="text-center"> Serial Number </th>
+                                    <th class="text-center"> Product Name </th>
+                                    <th class="text-center"> Product ID </th>
+                                    <th class="text-center"> Release Date </th>
+                                    <th class="text-center"> EoX External Announcement Date </th>
+                                    <th class="text-center"> End of Sale Date </th>
+                                    <th class="text-center"> End of SW Maintenance Releases </th>
+                                    <th class="text-center"> End of Security Vulnerability Support Date </th>
+                                    <th class="text-center"> End of Routine Failure Analysis Date </th>
+                                    <th class="text-center"> End of Service Contract Renewal </th>
+                                    <th class="text-center"> Last Date of Support </th>
+                                    <th class="text-center"> End of Svc Attach Date </th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                            {% for product_info in product_infos %}
+                            <tr>
+                                <td class="text-center">{{product_info.serial_number}}</td>
+                                <td class="text-center">{{product_info.product_name}}</td>
+                                <td class="text-center">{{product_info.product_id}}</td>
+                                <td class="text-center">{{product_info.release_date}}</td>
+                                <td class="text-center">{{product_info.EOXExternalAnnouncementDate}}</td>
+                                <td class="text-center">{{product_info.EndOfSaleDate}}</td>
+                                <td class="text-center">{{product_info.EndOfSWMaintenanceReleases}}</td>
+                                <td class="text-center">{{product_info.EndOfSecurityVulSupportDate}}</td>
+                                <td class="text-center">{{product_info.EndOfRoutineFailureAnalysisDate}}</td>
+                                <td class="text-center">{{product_info.EndOfServiceContractRenewal}}</td>
+                                <td class="text-center">{{product_info.LastDateOfSupport}}</td>
+                                <td class="text-center">{{product_info.EndOfSvcAttachDate}}</td>
+                            </tr>
+                            {%endfor%}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <!-- Right Rail -->
+    <div class="col-xl-3 col-md-4">
+    </div>
+</div>
+{%  endblock %}
+
+<script>
+</script>

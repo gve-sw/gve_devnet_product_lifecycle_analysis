@@ -1,0 +1,29 @@
+{% extends "masterPage.html" %}
+
+{% block content %}
+<div class="row">
+    <!-- Left Rail -->
+    <div class="col-xl-3"></div>
+
+    <!-- Middle Rail -->
+    <div class="col-xl-6">
+        <div class="section" style="text-align:center">
+            <div class="panel panel--loose panel--raised base-margin-bottom">
+                <h2 class="subtitle">Step 1: Login to get an access token </h2>
+                <div class="container">
+                    <form action="{{ url_for('login' ) }}" method="post">
+                        <button class="btn btn--secondary" id = "login" type="login" value="login">Login</button>
+                    </form>
+                </div>
+            </div>
+            <div class="panel panel--loose panel--raised base-margin-bottom"id="hello" style="display:none"></div>
+        </div>
+    </div>
+
+    <!-- Right Rail -->
+    <div class="col-xl-3"></div>
+</div>
+{%  endblock %}
+
+<script>
+</script>

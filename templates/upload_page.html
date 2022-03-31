@@ -1,0 +1,35 @@
+<!-- Template page: offers three sections to visualize a 3 steps workflow.-->
+
+{% extends "masterPage.html" %}
+
+{% block content %}
+<div class="row">
+        <!-- Left Rail -->
+        <div class="col-xl-3 col-md-4">
+        </div>
+
+        <!-- Middle Rail -->
+        <div class="col-xl-6 col-md-4">
+            <div class="section" >
+                <div class="panel panel--loose panel--raised base-margin-bottom" style="text-align:center">
+                    <h2 class="subtitle">Step 2: Upload CSV file with Serial Numbers </h2>
+                    <div class="section"> 
+                        <form action = "http://127.0.0.1:5000/uploader" method = "POST"
+                            enctype = "multipart/form-data">
+                            <input type = "file" name = "file" />
+                            <input class="btn btn--secondary" type = "submit"/>
+                        </form>
+                    </div> 
+                </div>
+                <div class="panel panel--loose panel--raised base-margin-bottom"id="hello" style="display:none"></div>
+            </div>
+        </div>
+
+    <!-- Right Rail -->
+    <div class="col-xl-3 col-md-4">
+    </div>
+</div>
+{%  endblock %}
+
+<script>
+</script>
